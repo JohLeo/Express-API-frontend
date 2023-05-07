@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { LoadingBikes } from './Loading';
-import { StillAlive } from './Style';
+import { MainContainer, BackBtn, StillAlive } from './Style';
 
 export const AliveBikes = () => {
   const [list, setList] = useState([]);
@@ -28,22 +28,21 @@ export const AliveBikes = () => {
   }
 
   return (
-    <div className="main-container">
+    <MainContainer>
 
       {list.map((bike) => (
         <StillAlive key={bike._id}>
-            🏔️  {bike.name}
+          🚵🏽 <br />
+          {bike.name}
         </StillAlive>
       ))}
 
       <Link to="/">
-        <button
-          className="btn-back"
-          type="button">
+        <BackBtn>
             Back to bikes
-        </button>
+        </BackBtn>
       </Link>
-    </div>
+    </MainContainer>
 
   );
 };

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { LoadingBikes } from './Loading';
+import { MainContainer, BackBtn, ListAllBikes, ListParagraph, ListH3 } from './Style'
 
 export const AllBikes = () => {
   const [list, setList] = useState([]);
@@ -26,23 +27,19 @@ export const AllBikes = () => {
   }
 
   return (
-    <div className="main-container">
+    <MainContainer>
       <Link to="/">
-        <button
-          className="btn-back"
-          type="button">
+        <BackBtn>
             Back to bikes
-        </button>
+        </BackBtn>
       </Link>
 
       {list.map((bikesAll) => (
-        <div
-          key={bikesAll._id}
-          className="bike-container">
-          <h3>{bikesAll.name}</h3>
-          <p>{bikesAll.type}</p>
-        </div>
+        <ListAllBikes key={bikesAll._id}>
+          <ListH3>{bikesAll.name}</ListH3>
+          <ListParagraph>{bikesAll.type}</ListParagraph>
+        </ListAllBikes>
       ))}
-    </div>
+    </MainContainer>
   );
 }

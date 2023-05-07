@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { Player } from '@lottiefiles/react-lottie-player';
+import { MainContainer, StartBtn } from './Style';
 
 const StartPage = styled.div`
     display: flex;
@@ -11,32 +13,37 @@ const StartPage = styled.div`
 
 export const Start = () => {
   return (
-    <div className="main-container">
+    <MainContainer>
+      <Player
+        src="https://assets4.lottiefiles.com/packages/lf20_uejpuuxi.json"
+        className="player"
+        loop
+        autoplay
+        speed={1}
+        style={{ height: '150px', width: '150px' }} />
       <StartPage>
 
-        <Link to="/bikes">
-          <button
-            className="btn-start"
-            type="button">
-            All bikes
-          </button>
-        </Link>
-
         <Link to="/singlebike">
-          <button
-            className="btn-start"
+          <StartBtn
             type="button"> Most used bike
-          </button>
+          </StartBtn>
         </Link>
 
         <Link to="/alivebikes">
-          <button
-            className="btn-start"
+          <StartBtn
             type="button">
             Alive and still rolling
-          </button>
+          </StartBtn>
         </Link>
+
+        <Link to="/bikes">
+          <StartBtn
+            type="button">
+            All bikes
+          </StartBtn>
+        </Link>
+
       </StartPage>
-    </div>
+    </MainContainer>
   )
 }

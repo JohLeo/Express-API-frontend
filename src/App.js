@@ -12,8 +12,8 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Start />} />
           <Route path="/bikes" element={<AllBikes />} />
-          <Route path="/singlebike" element={<SingleBike />} />
           <Route path="/alivebikes" element={<AliveBikes />} />
+          <Route path="/singlebike" element={<SingleBike />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
