@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { LoadingBikes } from './Loading';
+import { PainImg, DivRow, OneBike, OneParagraph } from './Style'
 
 export const SingleBike = () => {
   const [list, setList] = useState([]);
@@ -26,23 +27,26 @@ export const SingleBike = () => {
 
   return (
     <div className="main-container">
-      <Link to="/">
-        <button
-          className="btn-start"
-          type="button">
-            Back to bikes
-        </button>
-      </Link>
-      <div className="bike-container">
-        <h3>🥇 {list.name}</h3>
-        <p> The {list.type} - it has lost it&apos;s fixed function due to
+      <OneBike>
+        <DivRow>
+          <PainImg src="https://i.postimg.cc/TwtSD9gt/pain.jpg" alt="The Pain" />
+          <h3>🥇 {list.name}</h3>
+        </DivRow>
+        <OneParagraph> The {list.type} - it has lost it&apos;s fixed function due to
         age of the owner and upgraded some bodyparts but still going.
         <br />
         <br />
         Keep up the spirit little one!
-        </p>
-      </div>
+        </OneParagraph>
+      </OneBike>
 
+      <Link to="/">
+        <button
+          className="btn-back"
+          type="button">
+            Back to bikes
+        </button>
+      </Link>
     </div>
   );
 }

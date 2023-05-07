@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { LoadingBikes } from './Loading';
@@ -28,7 +29,7 @@ export const AllBikes = () => {
     <div className="main-container">
       <Link to="/">
         <button
-          className="btn-start"
+          className="btn-back"
           type="button">
             Back to bikes
         </button>
@@ -36,7 +37,7 @@ export const AllBikes = () => {
 
       {list.map((bikesAll) => (
         <div
-          key={bikesAll.id}
+          key={bikesAll._id}
           className="bike-container">
           <h3>{bikesAll.name}</h3>
           <p>{bikesAll.type}</p>

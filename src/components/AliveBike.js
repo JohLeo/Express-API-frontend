@@ -1,6 +1,8 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { LoadingBikes } from './Loading';
+import { StillAlive } from './Style';
 
 export const AliveBikes = () => {
   const [list, setList] = useState([]);
@@ -27,20 +29,20 @@ export const AliveBikes = () => {
 
   return (
     <div className="main-container">
+
+      {list.map((bike) => (
+        <StillAlive key={bike._id}>
+            🏔️  {bike.name}
+        </StillAlive>
+      ))}
+
       <Link to="/">
         <button
-          className="btn-start"
+          className="btn-back"
           type="button">
             Back to bikes
         </button>
       </Link>
-      {list.map((bike) => (
-        <div
-          key={bike.id}
-          className="alive-container">
-            🏔️  {bike.name}
-        </div>
-      ))}
     </div>
 
   );
