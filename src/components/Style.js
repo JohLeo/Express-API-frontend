@@ -4,7 +4,7 @@ export const MainContainer = styled.div`
     display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15px 0 30px 0;
+  margin: 20px 0 30px 0;
 `
 
 export const StartBtn = styled.button`
@@ -59,7 +59,7 @@ export const OneBike = styled.div`
   align-items: center;
   background-color: rgb(56, 198, 4);
   width: 300px;
-  margin-top: 40px;
+  margin-top: 20px;
   border-radius: 4px;
 `
 

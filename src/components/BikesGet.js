@@ -28,11 +28,6 @@ export const AllBikes = () => {
 
   return (
     <MainContainer>
-      <Link to="/">
-        <BackBtn>
-            Back to bikes
-        </BackBtn>
-      </Link>
 
       {list.map((bikesAll) => (
         <ListAllBikes key={bikesAll._id}>
@@ -40,6 +35,12 @@ export const AllBikes = () => {
           <ListParagraph>{bikesAll.type}</ListParagraph>
         </ListAllBikes>
       ))}
+
+      <Link to="/">
+        <BackBtn>
+            Back to bikes
+        </BackBtn>
+      </Link>
     </MainContainer>
   );
 }
